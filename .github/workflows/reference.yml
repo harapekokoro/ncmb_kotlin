@@ -1,6 +1,9 @@
 name: Auto Generate and Replace Reference Files
 
-on: [push]
+on:
+  push:
+    branches:
+      - develop
 
 jobs:
   generate_reference-and-commit:
@@ -8,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Setup Java"
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
-          java-version: 11
+          distribution: 'temurin'
+          java-version: 17
       - name: Build with Gradle
         run: ./gradlew
       - name: Generate reference
