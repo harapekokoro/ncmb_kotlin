@@ -14,10 +14,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew
       - name: List Gradle task
-        run: ./gradlew tasks
-      - name: Build with Gradle
-        uses: eskatos/gradle-command-action@v1
+        run: ./gradlew dokkaHtml
+      - name: zip docs
+        run: zip -r docs.zip docs/
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
         with:
-          dependencies-cache-enabled: true
-          configuration-cache-enabled: true
-          arguments: ./gradlew dokkaHtml
+          name: docs
+          path: docs.zip
