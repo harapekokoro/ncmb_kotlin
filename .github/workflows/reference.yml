@@ -40,7 +40,7 @@ jobs:
       - name: zip docs
         run: zip -r docs.zip docs/
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs.zip
