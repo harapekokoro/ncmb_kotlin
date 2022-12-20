@@ -27,7 +27,6 @@ import java.util.*
 
 /**
  * Installation information handle class
- * 【テスト書き換え】
  *
  * NCMBInstallation is used to retrieve and save, update the installation data.
  * Basic features are inherit from NCMBObject and NCMBBase
